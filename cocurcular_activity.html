@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>College Co-curricular Activities Feedback</title>
+  
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  
+  <style>
+    body {
+      margin:30px;
+      font-family: Arial, sans-serif;
+      background-color: #ffffcc; /* light yellow background color */
+    }
+    .content-wrapper {
+      padding-left: 12.5%;
+      padding-right: 12.5%;
+    }
+    .form-group {
+      margin-bottom: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Feedback Form -->
+  <div class="content-wrapper">
+    <h2 class="mb-4">Feedback on College Co-curricular Activities</h2>
+    <form id="feedbackForm">
+      <div class="form-group">
+        <label for="satisfaction">1. How satisfied were you with the variety of CCA offered by the college?</label>
+        <select class="form-control" id="satisfaction" name="satisfaction" required>
+            <option value="" disabled selected>Select rating</option>
+          <option value="1">01</option>
+          <option value="2">02</option>
+          <option value="3">03</option>
+          <option value="4">04</option>
+          <option value="5">05</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="enjoyable">2. Were there any specific activities you found particularly enriching or enjoyable? Why?</label>
+        <textarea class="form-control" id="enjoyable" name="enjoyable" rows="3"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="suggestions">3. Any suggestions to improve?</label>
+        <textarea class="form-control" id="suggestions" name="suggestions" rows="3"></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-primary mr-2"> Submit</button>
+      <button type="button" class="btn btn-secondary" onclick="clearForm()">Clear Form</button>
+    </form>
+  </div>
+
+  <!-- Bootstrap JS and jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <script>
+    // Function to clear the form
+    function clearForm() {
+      document.getElementById("feedbackForm").reset();
+    }
+
+    // Add event listener for form submission
+    document.getElementById("feedbackForm").addEventListener("submit", function(event){
+      event.preventDefault();
+      // You can add submission handling here, like sending data to a server
+      alert("Feedback submitted!");
+      window.location.href = "feedback_cards_page.html";
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forgot Password</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <!-- Custom CSS -->
+  <style>
+    /* Custom styles here */
+    .forgot-password-form {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #e6f7e6; /* light green background color */
+      border-radius: 10px; /* rounded corners */
+      box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1); /* box shadow */
+      transition: box-shadow 0.3s ease; /* smooth transition for box shadow */
+    }
+    .forgot-password-form:hover {
+      box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.2); /* increase shadow on hover */
+    }
+    .forgot-password-form h2 {
+      margin-bottom: 20px;
+    }
+    .forgot-password-form .form-group {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="forgot-password-form">
+          <h2>Forgot Password</h2>
+          <form id="resetPasswordForm">
+            <div class="form-group">
+              <label for="email">Email address</label>
+              <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+              <label for="newPassword">New Password</label>
+              <input type="password" class="form-control" id="newPassword" placeholder="Enter new password">
+            </div>
+            <div class="form-group">
+              <label for="confirmPassword">Confirm Password</label>
+              <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm new password">
+            </div>
+            <button type="button" class="btn btn-primary btn-block" onclick="resetPassword()">Reset Password</button>
+          </form>
+          <hr>
+          <p>Remember your password? <a href="login_page.html">Login</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript for password reset functionality -->
+  <script>
+    function resetPassword() {
+      var email = document.getElementById('email').value;
+      var newPassword = document.getElementById('newPassword').value;
+      var confirmPassword = document.getElementById('confirmPassword').value;
+
+      // Check if new password and confirm password match
+      if (newPassword !== confirmPassword) {
+        alert("New password and confirm password do not match.");
+        return;
+      }
+
+      // Password reset logic here (you can send an API request to the server)
+
+      // Redirect to login page after successful password reset
+      window.location.href = "login_page.html";
+    }
+
+    // Script to clear input fields on page load
+    window.onload = function() {
+      document.getElementById('email').value = '';
+      document.getElementById('newPassword').value = '';
+      document.getElementById('confirmPassword').value = '';
+    };
+  </script>
+</body>
+</html>

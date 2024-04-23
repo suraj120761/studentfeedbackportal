@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Side-by-Side Login Page</title>
+<!-- Bootstrap CSS -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="login_page.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+</head>
+<body>
+
+<div class="container">
+  <div class="form-container">
+    <h2>Authorized for students</h2>
+    <form id="loginForm">
+      <div class="form-group">
+        <label for="username"><i class="fas fa-user"></i> Username</label>
+        <input type="text" class="form-control" id="username" name="username" required placeholder="Username">
+      </div>
+      <div class="form-group">
+        <label for="password"><i class="fas fa-lock"></i> Password</label>
+        <input type="password" class="form-control" id="password" name="password" required placeholder="Password">
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary"><i class="fas fa-sign-in-alt"></i> Login</button>
+      </div>
+    </form>
+    <!-- Add this link to the Forgot Password page -->
+    <a href="forgot.html">Forgot Password?</a>
+    <a href="signup_page.html">Register</a>
+  </div>
+
+  <div class="form-container">
+    <h2>Authorized for Admins</h2>
+    <form id="registerForm">
+      <div class="form-group">
+        <label for="newUsername"><i class="fas fa-user"></i> Username</label>
+        <input type="text" class="form-control" id="newUsername" name="newUsername" required placeholder="Username">
+      </div>
+      <div class="form-group">
+        <label for="newPassword"><i class="fas fa-lock"></i> Password</label>
+        <input type="password" class="form-control" id="newPassword" name="newPassword" required placeholder="Password">
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary"> <i class="fas fa-user-plus"></i> Login</button>
+      </div>
+    </form>
+    <a href="forgot.html">Forgot Password?</a>
+  </div>
+<script>
+  document.getElementById("loginForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    // Handle login form submission here
+    alert("Login form submitted!");
+    // Redirect to index.html after login
+    window.location.href = "studentpagealongwithcssnotes.html";
+  });
+
+  document.getElementById("registerForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    // Handle register form submission here
+    alert("Register form submitted!");
+    // Redirect to index (1).html after registration
+    window.location.href = "adminportal.html";
+  });
+</script>
+
+</body>
+</html>

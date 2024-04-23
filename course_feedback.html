@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Course Feedback</title>
+  
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #ffffcc; 
+    }
+    .container {
+      margin-top: 50px;
+    }
+    .form-group {
+      margin-bottom: 30px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Rating Descriptions -->
+    <div id="ratingDescriptions">
+      <p>Rating Scale:</p>
+      <ul>
+        <li>1 - Bad</li>
+        <li>2 - Satisfied</li>
+        <li>3 - Good</li>
+        <li>4 - Very Good</li>
+        <li>5 - Excellent</li>
+      </ul>
+    </div>
+
+    <!-- Feedback Form -->
+    <h2 class="mb-4">Student Course Feedback</h2>
+    <form id="feedbackForm">
+      <!-- Question 1 -->
+      <div class="form-group">
+        <label for="clarity">1) How would you rate the clarity of course objectives and expectations?</label>
+        <select class="form-control" id="clarity" name="clarity" required>
+          <option value="" disabled selected>Select rating</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+
+      <!-- Question 2 -->
+      <div class="form-group">
+        <label for="materials">2) Were the learning materials provided as helpful?</label>
+        <select class="form-control" id="materials" name="materials" required>
+          <option value="" disabled selected>Select rating</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+
+      <!-- Question 3 -->
+      <div class="form-group">
+        <label for="engagement">3) Did the instructor effectively engage you in the learning process?</label>
+        <select class="form-control" id="engagement" name="engagement" required>
+          <option value="" disabled selected>Select rating</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+
+      <!-- Question 4 -->
+      <div class="form-group">
+        <label for="assessments">4) Were the assessments fair and relevant to course content?</label>
+        <select class="form-control" id="assessments" name="assessments" required>
+          <option value="" disabled selected>Select rating</option>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        </select>
+      </div>
+
+      <!-- Question 5 -->
+      <div class="form-group">
+        <label for="realWorld">5) Did the course effectively integrate real world applications or case studies?</label>
+        <select class="form-control" id="realWorld" name="realWorld" required>
+          <option value="" disabled selected>Select rating</option>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        </select>
+      </div>
+
+      <!-- Suggestions -->
+      <div class="form-group">
+        <label for="suggestions">6) Any Suggestions</label>
+        <textarea class="form-control" id="suggestions" name="suggestions" rows="3"></textarea>
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit" class="btn btn-primary mr-2">Submit</button>
+      <button type="button" class="btn btn-secondary" onclick="clearForm()">Clear Form</button>
+    </form>
+  </div>
+
+  <!-- Bootstrap JS and jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <script>
+    // Function to clear the form
+    function clearForm() {
+      document.getElementById("feedbackForm").reset();
+    }
+
+    // Add event listener for form submission
+    document.getElementById("feedbackForm").addEventListener("submit", function(event){
+      event.preventDefault();
+      // Display alert
+      alert("Feedback submitted!");
+      window.location.href = "feedback_cards_page.html";
+    });
+  </script>
+</body>
+</html>
